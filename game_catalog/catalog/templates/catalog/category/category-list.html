@@ -1,0 +1,41 @@
+<style>
+    .menu {
+        display:inline-block;
+        width: 19%;
+        height: 30px;
+        background-color:grey;
+        text-align:center;
+        border: 3px solid black;
+        color: white
+    }
+
+</style>
+
+<div style="width: 100%">
+     <div>
+     <a href="{% url 'catalog:index' %}"><div class="menu">Игры</div></a>
+     <a href="{% url 'catalog:genre-list' %}"><div class="menu">Жанры</div></a>
+     <a href="{% url 'catalog:category-list' %}"><div class="menu">Категории</div></a>
+     <a href="{% url 'catalog:platform-list' %}"><div class="menu">Платформы</div></a>
+     <a href="{% url 'catalog:esrb-list' %}"><div class="menu">Возрастное ограничение</div></a>
+    </div>
+ </div>
+<div style="width: 100%">
+
+{% if category_list %}
+    <ul>
+        {% for category in category_list %}
+            <li><a href="{% url 'catalog:category-detail' category.id %}">{{ category.category_name }}</a>
+            <a href="{% url 'catalog:category-delete' category.id %}"><span class="close">&#9746;</span></a></li>
+        {% endfor %}
+    </ul>
+<a href="{% url 'catalog:category-add-form'%}"><button type="submit">Добавить категорию</button></a>
+<form action="" method="GET">
+    <input type="text" name="q" />
+    <button type="submit">Поиск</button>
+</form>
+{% else %}
+    <p>No polls are available</p>
+{% endif %}
+
+</div>

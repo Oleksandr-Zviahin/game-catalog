@@ -1,0 +1,8 @@
+<h1>{{ genre.genre_name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<p><strong>Описание:</strong> {{genre.genre_description}}</p>
+
+<a href="{% url 'catalog:genre-update-form' genre.id %}"><button>Редактировать данные</button></a>
+<a href="{% url 'catalog:genre-list' %}"><button>Вернуться к жанрам</button></a>

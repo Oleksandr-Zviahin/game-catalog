@@ -1,0 +1,33 @@
+<h1>{{ game.game_name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<table>
+    <tr>
+        <td>Company:</td>
+        <td>{{game.game_company}}</td>
+    </tr>
+    <tr>
+        <td>Release date:</td>
+        <td>{{game.game_release_date}}</td>
+    </tr>
+    <tr>
+        <td>PG:</td>
+        <td>{{game.esrb_id}}</td>
+    </tr>
+    <tr>
+        <td>Genres:</td>
+        <td>{% for genre_name in game.genres.all %} {{genre_name}} {% endfor %}</td>
+    </tr>
+    <tr>
+        <td>Platfroms:</td>
+        <td>{% for platform_name in game.platforms.all %}{{platform_name}} {% endfor %}</td>
+    </tr>
+    <tr>
+        <td>Category:</td>
+        <td>{{game.category_id}}</td>
+    </tr>
+</table>
+<p><strong>Описание:</strong> {{game.game_description}}</p>
+
+<a href="{% url 'catalog:game-update-form' game.id %}"><button>Редактировать данные</button></a>
+<a href="{% url 'catalog:index' %}"><button>Вернуться на главную</button></a>

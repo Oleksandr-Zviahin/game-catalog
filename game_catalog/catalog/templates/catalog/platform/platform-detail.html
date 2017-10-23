@@ -1,0 +1,7 @@
+<h1>{{ platform.platform_name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<p>Version: {{platform.platform_version}}</p>
+<p><strong>Описание:</strong> {{platform.platform_description}}</p>
+<a href="{% url 'catalog:platform-update-form' platform.id %}"><button>Редактировать данные</button></a>
+<a href="{% url 'catalog:platform-list' %}"><button>Вернуться к платформам</button></a>

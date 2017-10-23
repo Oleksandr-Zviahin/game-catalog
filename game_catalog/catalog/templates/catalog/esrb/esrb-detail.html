@@ -1,0 +1,7 @@
+<h1>{{ esrb.rate_full_name }}</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<h3>Короткое название: {{esrb.rate_short_name}}</h3>
+<p><strong>Описание:</strong> {{esrb.rate_description}}</p>
+
+<a href="{% url 'catalog:esrb-update-form' esrb.id %}"><button>Редактировать данные</button></a>
+<a href="{% url 'catalog:esrb-list' %}"><button>Вернуться к рейтингу</button></a>
