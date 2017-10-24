@@ -4,11 +4,29 @@ from .views import category_views,\
     esrb_views,\
     game_views, \
     genre_views, \
-    platform_views
+    platform_views, \
+    registration_view, \
+    authorisation_view, \
+    logout_view
 
 app_name = 'catalog'
 urlpatterns = [
-    url(r'^$', game_views.IndexView.as_view(), name='index'),
+    url(
+        r'^$',
+        authorisation_view.LoginFormView.as_view(),
+        name='login'
+    ),
+    url(r'^index/$', game_views.IndexView.as_view(), name='index'),
+    url(
+        r'^register/$',
+        registration_view.RegistrationFormView.as_view(),
+        name='register'
+    ),
+    url(
+        r'^logout/$',
+        logout_view.LogoutView.as_view(),
+        name='logout'
+    ),
     url(
         r'^category-list/$',
         category_views.CategoryListView.as_view(),
