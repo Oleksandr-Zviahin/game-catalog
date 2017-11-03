@@ -21,7 +21,7 @@ class ESRBListView(generic.ListView):
         return queryset
 
 
-class ESRBCreateView(generic.UpdateView):
+class ESRBCreateView(generic.CreateView):
     model = ESRB
     template_name = 'catalog/add-form.html'
     success_url = '../../catalog/esrb-list'

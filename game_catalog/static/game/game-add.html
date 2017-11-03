@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h1>Game add</h1>
+<form action="" method="post" id="game-form">
+    <p><label for="id_game_name">Game name:</label> <input type="text" name="game_name" required maxlength="200" id="id_game_name" /></p>
+<p><label for="id_game_company">Game company:</label> <input type="text" name="game_company" required maxlength="100" id="id_game_company" /></p>
+<p><label for="id_game_description">Game description:</label> <input type="text" name="game_description" required maxlength="1500" id="id_game_description" /></p>
+<p><label for="id_game_release_date">Game release date:</label> <input type="text" name="game_release_date" required id="id_game_release_date" /></p>
+    <input id="submit" type="submit" value="Send message" />
+</form>
+<a href="game-list.html"><button>back to games</button></a>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script type="text/javascript" src="game-add.js"></script>
+</body>
+</html>

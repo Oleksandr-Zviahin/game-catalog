@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework import serializers
 
 
 class Genre(models.Model):
@@ -7,3 +8,9 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.genre_name
+
+
+class GenreSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Genre
+        fields = ('genre_name', 'genre_description')

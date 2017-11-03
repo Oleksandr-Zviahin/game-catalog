@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<style>
+    .menu {
+        display:inline-block;
+        width: 16%;
+        height: 30px;
+        background-color:grey;
+        text-align:center;
+        border: 3px solid black;
+        color: white
+    }
+
+</style>
+
+<div style="width: 100%">
+     <div>
+     <a href="../game/game-list.html"><div class="menu">Игры</div></a>
+     <a href="../genre/genre-list.html"><div class="menu">Жанры</div></a>
+     <a href="../category/category-list.html"><div class="menu">Категории</div></a>
+     <a href="../platform/platform-list.html"><div class="menu">Платформы</div></a>
+     <a href="../esrb/esrb-list.html"><div class="menu">Возрастное ограничение</div></a>
+    </div>
+ </div>
+
+<h1>Age rate list</h1>
+<button id="get_esrb_list_button">Get rate list</button>
+<div id="esrb_list">
+    <div></div>
+</div>
+<a href="esrb-add.html"><button>add new rate</button></a>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script type="text/javascript" src="esrb.js"></script>
+</body>
+</html>

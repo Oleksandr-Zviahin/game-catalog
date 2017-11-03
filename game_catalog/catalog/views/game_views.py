@@ -25,7 +25,7 @@ class IndexView(generic.ListView):
 class GameCreateView(generic.CreateView):
     model = Game
     template_name = 'catalog/add-form.html'
-    success_url = '../../catalog/'
+    success_url = '../../catalog/index'
     fields = [
         'game_name',
         'game_company',
@@ -46,7 +46,7 @@ class GameDetailView(generic.DetailView):
 class GameUpdateView(generic.UpdateView):
     model = Game
     template_name = 'catalog/add-form.html'
-    success_url = '../../catalog/'
+    success_url = '../../catalog/index'
     fields = [
         'game_name',
         'game_company',
@@ -62,4 +62,4 @@ class GameUpdateView(generic.UpdateView):
 class GameDeleteView(generic.DeleteView):
     model = Game
     template_name = 'catalog/delete-form.html'
-    success_url = '../../catalog/'
+    success_url = '../../catalog/index'

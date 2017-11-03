@@ -1,8 +1,10 @@
 from django.db import models
-from .category import Category
-from .esrb import ESRB
-from .genre import Genre
-from .platform import Platform
+from rest_framework import serializers
+
+from .category import Category, CategorySerializer
+from .esrb import ESRB, ESRBSerializer
+from .genre import Genre, GenreSerializer
+from .platform import Platform, PlatformSerializer
 
 
 class Game(models.Model):
@@ -17,3 +19,23 @@ class Game(models.Model):
 
     def __str__(self):
         return self.game_name
+
+
+class GameSerializer(serializers.HyperlinkedModelSerializer):
+    category_id = CategorySerializer(read_only=True, many=False)
+    esrb_id = ESRBSerializer(read_only=True, many=False)
+    genres = GenreSerializer(read_only=True, many=True)
+    platforms = PlatformSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Game
+        fields = (
+            'game_name',
+            'game_company',
+            'game_description',
+            'game_release_date',
+            'category_id',
+            'esrb_id',
+            'genres',
+            'platforms',
+        )

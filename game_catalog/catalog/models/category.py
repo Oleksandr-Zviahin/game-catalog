@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework import serializers
 
 
 class Category(models.Model):
@@ -7,3 +8,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category_name
+
+
+class CategorySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Category
+        fields = ('category_name', 'category_description')

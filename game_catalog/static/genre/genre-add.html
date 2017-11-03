@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h1>Genre add</h1>
+<form action="" method="post" id="genre-form">
+    <p><label for="id_genre_name">Genre name:</label> <input type="text" name="genre_name" required maxlength="50" id="id_genre_name" /></p>
+<p><label for="id_genre_description">Genre description:</label> <input type="text" name="genre_description" required maxlength="1500" id="id_genre_description" /></p>
+    <input id="submit" type="submit" value="Send message" />
+</form>
+<a href="genre-list.html"><button>back to genres</button></a>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script type="text/javascript" src="genre-add.js"></script>
+</body>
+</html>
